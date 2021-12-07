@@ -16,9 +16,9 @@
                 <div>
                 </div>
                 <nav class="space-x-4 text-gray-300 text-sm sm:text-base">
-                    <a class="no-underline hover:underline" href="/">Home</a>
-                    <a class="no-underline hover:underline" href="/shop">Shop</a>
-                    <a class="no-underline hover:underline" href="/cart">Cart</a>
+                    <a class="no-underline hover:underline" href="{{ route('home') }}">Home</a>
+                    <a class="no-underline hover:underline" href="{{ route('shop') }}">Shop</a>
+                    <a class="no-underline hover:underline" href="{{ route('cart') }}">Cart</a>
                 </nav>
             </div>
         </header>

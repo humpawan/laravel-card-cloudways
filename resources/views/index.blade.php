@@ -15,7 +15,7 @@
             </p>
 
             <a
-                href="/shop"
+                href="shop"
                 class="px-8 py-4 text-l uppercase text-white font-bold bg-blue-600 rounded-full w-full">
                 Shop Now
             </a>

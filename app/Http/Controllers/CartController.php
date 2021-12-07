@@ -16,7 +16,7 @@ class CartController extends Controller
     public function addToCart($id)
     {
         $product = Product::findOrFail($id);
-        $cartItems = Session()->get('cartItems', []);
+        $cartItems = Session()->get('cartItems');
 
         if (isset($cartItems[$id])) {
             $cartItems[$id]['quantity']++;
@@ -28,9 +28,9 @@ class CartController extends Controller
                 "quantity" => 1,
                 "price" => $product->price
             ];
-            Session()->put('cartItems', $cartItems);
-            return redirect()->back()->with('success', 'Product Added To Cart!.');
         }
+        Session()->put('cartItems', $cartItems);
+        return redirect()->back()->with('success', 'Product Added To Cart!.');
     }
 
     public function update(Request $request)

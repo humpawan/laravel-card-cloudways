@@ -63,7 +63,7 @@
                                     <div class="flex-shrink-0 h-10 w-10">
                                         <img
                                             class="h-10 w-10 rounded-full"
-                                            src="{{ asset($value['image_path']) }}"
+                                            src="public/{{ $value['image_path'] }}"
                                             alt="{{ $value['name'] }}">
                                     </div>
 
@@ -92,7 +92,7 @@
                                 <form action="{{ route('update.from.cart', $key) }}" method="POST">
                                     @csrf
                                     <select name="quantity" id="quantity"  onchange="this.form.submit()">
-                                        @for ($i = 1; $i <= 10; $i++)
+                                        @for ($i = 1; $i <= $value['quantity']*2; $i++)
                                             <option value="{{ $i }}" {{ $value['quantity'] == $i ? 'selected' : ''}}>
                                                 {{ $i }}
                                             </option>

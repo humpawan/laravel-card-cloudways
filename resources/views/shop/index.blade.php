@@ -14,7 +14,7 @@
     @foreach ($products as $product)
     <div class="mx-auto">
         <img
-            src="{{ asset($product->image_path) }}"
+            src="public/{{ $product->image_path }}"
             alt="{{ $product->name }}"
             style="height:200px !important;">
 
@@ -30,7 +30,7 @@
            Price: <span class="text-red-500">$ {{ $product->price }}</span>
         </p>
 
-        <a  href="/shop/{{ $product->id }}"
+        <a  href="shop/{{ $product->id }}"
             class="px-6 py-2 text-l uppercase text-white font-bold bg-blue-600 rounded-full w-full">
             Read more...
         </a>

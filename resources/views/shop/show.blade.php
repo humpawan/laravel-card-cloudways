@@ -5,7 +5,7 @@
     <div class="grid sm:grid-cols-2 gap-2 pt-12 sm:pt-20 mx-auto w-4/5">
         <div class="mx-auto">
             <img
-                src="{{ asset($product->image_path) }}"
+                src="../public/{{ $product->image_path }}"
                 alt="{{ $product->name }}">
         </div>
 
