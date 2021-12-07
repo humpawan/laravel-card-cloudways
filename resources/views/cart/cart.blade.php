@@ -8,7 +8,26 @@
 
     <hr class="border-1 border-gray-300">
 </div>
-
+@if ( Session::has('success') )
+<h4 class="alert alert-success" id="">
+    <button data-dismiss="alert" class="close close-sm" type="button">
+        <i class="fa fa-times"></i>
+    </button>
+    {{ Session::get('success') }}</h4>
+@endif
+@if ( Session::has('fail') )
+<h4 class="alert alert-danger" id="">
+    <button data-dismiss="alert" class="close close-sm" type="button">
+        <i class="fa fa-times"></i>
+    </button>
+    {{ Session::get('fail') }}</h4>
+@endif
+@if($errors->any())
+<h4 class="alert alert-danger">
+    <button data-dismiss="alert" class="close close-sm" type="button">
+        <i class="fa fa-times"></i>
+    </button>{{$errors->first()}}</h4>
+@endif
 <div class="flex flex-col mx-auto w-4/5">
     <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
         <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
@@ -126,4 +145,11 @@
         </div>
     </div>
 </div>
+
+<script>
+     window.setTimeout(function () {
+        // Closing the alert
+        $('.alert').alert('close');
+    }, 5000);
+</script>
 @endsection

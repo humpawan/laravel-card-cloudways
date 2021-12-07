@@ -30,7 +30,7 @@ class CartController extends Controller
             ];
         }
         Session()->put('cartItems', $cartItems);
-        return redirect()->back()->with('success', 'Product Added To Cart!.');
+        return redirect()->back()->withSuccess('Product Added To Cart!.');
     }
 
     public function update(Request $request)
@@ -41,7 +41,7 @@ class CartController extends Controller
             session()->put('cartItems', $cartItems);
         }
 
-        return redirect()->back()->with('success', 'Product added to cart!');
+        return redirect()->back()->withSuccess('Product Updated From cart!');
     }
 
     public function delete(Request $request)
@@ -52,7 +52,7 @@ class CartController extends Controller
                 unset($cartItems[$request->id]);
                 Session()->put('cartItems', $cartItems);
             }
-            return redirect()->back()->with('success', 'Product Remove From Cart!.');
+            return redirect()->back()->withSuccess('Product Remove From Cart!.');
         }
     }
 }

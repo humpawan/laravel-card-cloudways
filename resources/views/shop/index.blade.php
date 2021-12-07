@@ -9,7 +9,26 @@
 
     <hr class="border-1 border-gray-300">
 </div>
-
+@if ( Session::has('success') )
+<h4 class="alert alert-success" id="">
+    <button data-dismiss="alert" class="close close-sm" type="button">
+        <i class="fa fa-times"></i>
+    </button>
+    {{ Session::get('success') }}</h4>
+@endif
+@if ( Session::has('fail') )
+<h4 class="alert alert-danger" id="">
+    <button data-dismiss="alert" class="close close-sm" type="button">
+        <i class="fa fa-times"></i>
+    </button>
+    {{ Session::get('fail') }}</h4>
+@endif
+@if($errors->any())
+<h4 class="alert alert-danger">
+    <button data-dismiss="alert" class="close close-sm" type="button">
+        <i class="fa fa-times"></i>
+    </button>{{$errors->first()}}</h4>
+@endif
 <div class="grid sm:grid-cols-4 gap-8 pt-20 mx-auto w-4/5">
     @foreach ($products as $product)
     <div class="mx-auto">
@@ -37,4 +56,10 @@
     </div>
     @endforeach
 </div>
+<script>
+     window.setTimeout(function () {
+        // Closing the alert
+        $('.alert').alert('close');
+    }, 5000);
+</script>
 @endsection
